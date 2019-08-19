@@ -1,0 +1,35 @@
+body {
+  background-color: #d0bd70;
+}
+
+p {
+  font-style: italic;
+}
+
+li {
+  font-style: italic;
+}
+.title {
+
+}
+
+.about-me {
+  border-top: 2px solid black;
+  padding: 30px;
+}
+
+.work-experience {
+  border-top: 2px solid black;
+  padding: 30px;
+}
+
+.education {
+  border-top: 2px solid black;
+  padding: 30px;
+}
+
+.skills {
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+  padding: 30px;
+}

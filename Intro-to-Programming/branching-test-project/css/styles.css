@@ -1,0 +1,83 @@
+body {
+  background-color: #004d66;
+}
+
+
+h1 {
+  text-align: center;
+  background-color: #002966;
+  color: white;
+  padding-top: 50px;
+  padding-bottom: 10px;
+  margin: 0px;
+  border: none;
+}
+
+h3 {
+  color: white;
+  text-align: center;
+  background-color: #002966;
+  padding: 10px;
+  margin: 0px;
+  font-size: 25px;
+}
+
+.Accomidations {
+  font-style: italic;
+  font-size: 25px;
+  text-align: center;
+  background-color: #002966;
+  color: white;
+  padding-top: 35px;
+  padding-bottom: 35px;
+  margin: 25px;
+  border: 5px solid black;
+}
+
+.Activities {
+  font-style: italic;
+  font-size: 25px;
+  text-align: center;
+  background-color: #002966;
+  color: white;
+  padding-top: 35px;
+  padding-bottom: 35px;
+  margin: 25px;
+  border: 5px solid black;
+}
+
+.Travel {
+  font-style: italic;
+  font-size: 25px;
+  text-align: center;
+  background-color: #002966;
+  color: white;
+  padding-top: 35px;
+  padding-bottom: 35px;
+  margin: 25px;
+  border: 5px solid black;
+}
+
+.Pictures {
+  font-style: italic;
+  font-size: 25px;
+  text-align: center;
+  background-color: #002966;
+  color: white;
+  padding-top: 35px;
+  padding-bottom: 35px;
+  margin: 25px;
+  border: 5px solid black;
+}
+
+.Contact {
+  font-style: italic;
+  font-size: 25px;
+  text-align: center;
+  background-color: #002966;
+  color: white;
+  padding-top: 35px;
+  padding-bottom: 35px;
+  margin: 25px;
+  border: 5px solid black;
+}

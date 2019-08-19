@@ -1,0 +1,42 @@
+body {
+  background-color: #ffe680;
+}
+
+h1 {
+  background-color: #ff99ff;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 50px;
+    padding-bottom: 0px;
+    text-align: center;
+    margin: 0px;
+}
+
+h2 {
+  background-color: #ff99ff;
+  text-align: center;
+  padding: 5px;
+}
+
+.flashy {
+  color: red;
+  font-style: italic;
+}
+
+.best {
+  color: #ff99ff;
+  font-size: 25px;
+}
+
+p {
+    font-size: 27px;
+}
+
+li {
+  font-size: 23px;
+}
+
+.cupcake-pic {
+  height: 350px;
+  width: 300px;
+}

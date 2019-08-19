@@ -1,0 +1,81 @@
+body {
+  background-color: #1dc9ba;
+}
+
+h1 {
+  text-align: center;
+  background-color: black;
+  color: white;
+}
+
+.snake {
+  width: 380px;
+  float: left;
+  padding: 5px;
+  border: 2px solid black;
+}
+
+.snake img {
+  width: 100%;
+  height: 100%;
+  border: 2px solid black;
+}
+
+.kitten {
+  width: 380px;
+  float: left;
+  padding: 5px;
+  border: 2px solid black;
+}
+
+.kitten img {
+  width: 100%;
+  height: 100%;
+  border: 2px solid black;
+}
+
+.gerbil {
+  width: 380px;
+  float: right;
+  padding: 5px;
+  border: 2px solid black;
+}
+
+.gerbil img {
+  width: 100%;
+  height: 100%;
+  border: 2px solid black;
+}
+
+.dog {
+  width: 380px;
+  float: right;
+  padding: 5px;
+  border: 2px solid black;
+}
+
+.dog img {
+  width: 100%;
+  height: 100%;
+  border: 2px solid black;
+}
+
+.info {
+  font-weight: bold;
+}
+
+@@media screen and (max-width: 1000px) and (min-width: 700px) {
+  body {
+    background-color: blue;
+    font-size: 35px;
+    color: white;
+  }
+}
+
+@@media screen and (max-width: 400px) and (min-width: 200px) {
+  body {
+    background-color: green;
+    font-size: 20px;
+    color: red;
+  }
+}

@@ -1,0 +1,42 @@
+body {
+  background-image: url("concert-background.jpg");
+  background-color: black;
+}
+
+p {
+  color: white;
+}
+
+.band-img {
+  align-self: center;
+  float: right;
+  margin: 25px;
+  border: 7px solid #1a356b;
+}
+
+.band-name {
+  text-align: center;
+  font-size: 100px;
+  color: white;
+}
+
+li {
+  border-bottom: 2px solid white;
+  color: white;
+}
+
+ul {
+  border: 4px solid #1a356b;
+  float: right;
+  padding: 25px;
+  background-color: #1a356b;
+}
+
+.shows {
+  font-size: 20px;
+}
+
+.main-page {
+  border: 7px solid #1a356b;
+  padding: 15px;
+}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>All Sales Vinyl</title>
+    <link rel="stylesheet" href="/public/bootstrap.css" type="text/html">
+  </head>
+  <body>
+    <div class = "container">
+      <div class="jumbotron">
+        <h1>All Sales Vinyl</h1>
+
+        <h3>Available Records</h3>
+      </div>
+      <% if @albums.any? %>
+        <ul>
+      	   <% @albums.each do |album| %>
+           <li><a href="/albums/<%= album.id %>"><%= album.name %></a></li>
+           <% end %>
+        </ul>
+      <% else %>
+        <p>There are currently no records to display.</p>
+      <% end %>
+      <div>
+
+      <p><button type="submit" class="btn"><a href="/albums/new">Add a new album</a></button></p>
+
+      <form action="/albums" method="get">
+        <div class="form-group">
+          <label for="search">Search</label>
+          <input id="search" name="search" class="form-control" type="text" value=<%= params[:search] %> >
+        </div>
+        <button type="submit" class="btn">Search</button>
+        <p><button type="submit" class="btn"><a href="/albums">Go Back</a></button></p>
+      </form>
+    </div>
+  </body>
+</html>

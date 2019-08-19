@@ -1,0 +1,39 @@
+body {
+  background-color: blue;
+}
+
+h2 {
+  text-align: center;
+  background-color: black;
+  font-style: italic;
+  padding: 20px;
+  color: white;
+}
+
+.July-27-19 {
+  font-size: 20px;
+  font-style: oblique;
+  background-color: green;
+  border: 3px dotted black;
+  padding: 20px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.July-29-19 {
+  font-size: 20px;
+  font-style: italic;
+  background-color: yellow;
+  border: 3px solid black;
+  padding: 20px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.about-me {
+  font-size: 23px;
+  color: white;
+  text-align: center;
+  font-style: normal;
+  border: 5px dotted red;
+}

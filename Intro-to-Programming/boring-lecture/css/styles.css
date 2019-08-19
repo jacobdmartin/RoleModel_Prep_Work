@@ -1,0 +1,11 @@
+.intro {
+  color: brown;
+  font-style: italic;
+  font-size: 15px;
+  padding: 5px;
+}
+
+.img {
+  height: 450px;
+  width: 600px;
+}

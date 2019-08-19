@@ -1,0 +1,57 @@
+h1 {
+  color: red;
+}
+
+h2 {
+  font-style: italic;
+  text-align: center;
+}
+
+p {
+  font-family: sans-serif;
+  font-size: 20px;
+}
+
+ul {
+  font-size: 20px;
+  line-height: 30px;
+}
+
+  li {
+    font-size: 20px;
+    font-weight: 200;
+  }
+
+  .image {
+    transform: rotate(90deg);
+  }
+
+  .oddimage {
+    transform: rotate(270deg);
+  }
+
+  .washington {
+    color: green;
+  }
+
+  .washington-p {
+
+  }
+
+  .topsail {
+    color: green;
+  }
+
+  .topsail-p {
+
+  }
+
+  .carowinds {
+    color: green;
+  }
+
+  .carowinds-p {
+
+  }
+
+/*all the required css styles have been added (color, text-align, font-style, font-weight, font-family, font-size, and line-height)*/

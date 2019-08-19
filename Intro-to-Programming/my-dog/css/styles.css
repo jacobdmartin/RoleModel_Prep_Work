@@ -1,0 +1,22 @@
+.name {
+  color: brown;
+}
+
+li {
+  font-size: 22px;
+}
+
+body {
+  background: #ff9933;
+}
+
+p {
+  font-size: 20px;
+}
+
+.picture {
+  transform: rotate(90deg);
+  height: 25%;
+  width: 25%;
+  margin-bottom: 30px;
+}
