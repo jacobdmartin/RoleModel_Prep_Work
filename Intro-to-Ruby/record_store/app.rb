@@ -12,13 +12,12 @@ get('/') do
 end
 
 get('/albums') do
-  @albums = Album.all
+  @albums = Album.all.sort_by(&:name)
   @albums = Album.search(params[:search]) if params[:search]
   erb(:albums)
 end
 
 get 'search' do
-  @albums = Album.sort_by(&:name)
   @albums = Album.search(params[:search]) if params[:search]
   erb(:results)
 end
