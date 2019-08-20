@@ -50,4 +50,8 @@ class Album
   def sold()
     @@sold_albums[:name] = @@albums.delete(:name)
   end
+
+  def songs
+    Song.find_by_album(self.id)
+  end
 end
