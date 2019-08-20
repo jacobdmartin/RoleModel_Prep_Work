@@ -8,11 +8,13 @@ also_reload('lib/**/*.rb')
 
 get('/') do
   @albums = Album.all
+  @sold_albums = Album.all_sold
   erb(:albums)
 end
 
 get('/albums') do
-  @albums = Album.all.sort_by(&:name)
+  @albums = Album.all
+  @sold_albums = Album.all_sold
   @albums = Album.search(params[:search]) if params[:search]
   erb(:albums)
 end

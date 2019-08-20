@@ -23,15 +23,35 @@
       <% end %>
       <div>
 
-      <p><button type="submit" class="btn"><a href="/albums/new">Add a new album</a></button></p>
-
       <form action="/albums" method="get">
         <div class="form-group">
-          <label for="search">Search</label>
-          <input id="search" name="search" class="form-control" type="text" value=<%= params[:search] %> >
-        </div>
         <button type="submit" class="btn">Search</button>
-        <p><button type="submit" class="btn"><a href="/albums">Go Back</a></button></p>
+        <input id="search" name="search" class="form-control" type="text" value=<%= params[:search] %> >
+        </div>
+        <button type="submit" class="btn"><a href="/albums">Go Back</a></button><button type="submit" class="btn"><a href="/albums/new">Add a new album</a></button>
+      </form>
+
+      <div class="jumbotron">
+
+        <h3>Sold Records</h3>
+      </div>
+      <% if @sold_albums.any? %>
+        <ul>
+      	   <% @@sold_albums.each do |sold_album| %>
+           <li><a href="/albums/<%= sold_album.id %>"><%= sold_album.name %></a></li>
+           <% end %>
+        </ul>
+      <% else %>
+        <p>There are currently no records to display.</p>
+      <% end %>
+      <div>
+
+      <form action="/albums" method="get">
+      <div class="form-group">
+      <button type="submit" class="btn">Search</button>
+      <input id="search" name="search" class="form-control" type="text" value=<%= params[:search] %> >
+      </div>
+      <button type="submit" class="btn"><a href="/albums">Go Back</a></button><button type="submit" class="btn"><a href="/albums/new">Add a new album</a></button>
       </form>
     </div>
   </body>

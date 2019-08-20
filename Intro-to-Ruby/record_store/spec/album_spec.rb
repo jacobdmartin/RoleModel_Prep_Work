@@ -71,4 +71,13 @@ describe '#Album' do
       expect(Album.all).to(eq([album2]))
     end
   end
+
+  describe('#sold') do
+    it('takes an album from "@@albums" and places it in "@@sold_albums"') do
+      album = Album.new("The Next Step", nil)
+      album.save()
+      sold_albums = album.sold()
+      expect(album.sold()).to(eq(sold_albums))
+    end
+  end
 end

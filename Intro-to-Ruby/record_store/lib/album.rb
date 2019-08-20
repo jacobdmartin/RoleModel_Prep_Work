@@ -11,7 +11,11 @@ class Album
   end
 
   def self.all
-    @@albums.values()
+    @@albums.values.sort_by(&:name)
+  end
+
+  def self.all_sold
+    @@sold_albums.values.sort_by(&:name)
   end
 
   def save
@@ -41,5 +45,9 @@ class Album
 
   def delete
     @@albums.delete(self.id)
+  end
+
+  def sold()
+    @@sold_albums[:name] = @@albums.delete(:name)
   end
 end
