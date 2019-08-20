@@ -3,38 +3,43 @@
   <head>
     <meta charset="utf-8">
     <title>All Sales Vinyl</title>
-    <link rel="stylesheet" href="/public/bootstrap.css" type="text/html">
+    <link rel="stylesheet" href="/css/bootstrap.css">
   </head>
   <body>
-    <div class = "container">
+    <div class="container">
       <div class="jumbotron">
-        <h1>All Sales Vinyl</h1>
+        <h2>All Sales Vinyl</h2>
 
-        <h3>Available Records</h3>
+        <h4>Available Records</h4>
       </div>
       <% if @albums.any? %>
-        <ul>
+        <ul class="list-group">
       	   <% @albums.each do |album| %>
-           <li><a href="/albums/<%= album.id %>"><%= album.name %></a></li>
+           <li class="list-group-item"><a href="/albums/<%= album.id %>"><%= album.name %></a></li>
            <% end %>
         </ul>
       <% else %>
         <p>There are currently no records to display.</p>
       <% end %>
-      <div>
 
       <form action="/albums" method="get">
-        <div class="form-group">
-        <button type="submit" class="btn">Search</button>
-        <input id="search" name="search" class="form-control" type="text" value=<%= params[:search] %> >
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <button type="submit" class="btn btn-primary">Search</button>
         </div>
-        <button type="submit" class="btn"><a href="/albums">Go Back</a></button>
-        <button type="submit" class="btn"><a href="/albums/new">Add a new album</a></button>
+        <input id="search" name="search" class="form-control" type="text" value=<%= params[:search] %> >
+      </div>
+
+        <button type="submit" class="btn btn-info"><a href="/albums">Go Back</a></button>
+        <button type="submit" class="btn btn-success"><a href="/albums/new">Add a new album</a></button>
       </form>
 
-      <div class="jumbotron">
+      <br /><br />
 
-        <h3>Sold Records</h3>
+      <div class="jumbotron">
+        <h2>Sold Records</h2>
+
+        <h4>No Longer Available</h4>
       </div>
       <% if @sold_albums.any? %>
         <ul>
@@ -45,12 +50,11 @@
       <% else %>
         <p>There are currently no records to display.</p>
       <% end %>
-      <div>
 
       <form action="/albums" method="get">
       <div class="form-group">
-      <button type="submit" class="btn">Search</button>
       <input id="search" name="search" class="form-control" type="text" value=<%= params[:search] %> >
+      <button type="submit" class="btn btn-primary btn-block">Search</button>
       </div>
       </form>
     </div>
