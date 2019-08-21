@@ -19,15 +19,15 @@
            <% end %>
         </ul>
       <% else %>
-        <p>There are currently no records to display.</p>
+        <ul class="list-group">
+          <li class="list-group-item">There are currently no records to display.</li>
+        </ul>
       <% end %>
 
       <form action="/albums" method="get">
       <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <button type="submit" class="btn btn-primary">Search</button>
-        </div>
-        <input id="search" name="search" class="form-control" type="text" value=<%= params[:search] %> >
+        <input id="search" name="search" class="form-control" placeholder="Album Name" type="text" value=<%= params[:search] %> >
+        <button type="submit" class="btn btn-primary">Search</button>
       </div>
 
         <button type="submit" class="btn btn-info"><a href="/albums">Go Back</a></button>
@@ -42,19 +42,21 @@
         <h4>No Longer Available</h4>
       </div>
       <% if @sold_albums.any? %>
-        <ul>
+        <ul class="list-group">
       	   <% @@sold_albums.each do |sold_album| %>
            <li><a href="/albums/<%= sold_album.id %>"><%= sold_album.name %></a></li>
            <% end %>
         </ul>
       <% else %>
-        <p>There are currently no records to display.</p>
+        <ul class="list-group">
+          <li class="list-group-item">There are currently no records to display.</li>
+        </ul>
       <% end %>
 
       <form action="/albums" method="get">
-      <div class="form-group">
-      <input id="search" name="search" class="form-control" type="text" value=<%= params[:search] %> >
-      <button type="submit" class="btn btn-primary btn-block">Search</button>
+      <div class="input-group mb-3">
+      <button type="submit" class="btn btn-primary">Search</button>
+      <input id="search" name="search" class="form-control" placeholder="Sold Album Name" type="text" value=<%= params[:search] %> >
       </div>
       </form>
     </div>
