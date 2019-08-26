@@ -1,44 +1,21 @@
+body {
+  background-color: black;
+}
+
 .favorite-people, .favorite-places, .favorite-seasons, .life-goals{
   display: block;
   width: 100%;
   height: auto;
-  z-index: 0;
 }
 
-.favorite-people {
+img {
   width: 100%;
-  height: 300px;
-  background-image: url('family.jpeg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  border: 1px solid black;
-}
-
-.favorite-place {
-  width: 100%;
-  height: 300px;
-  background-image: url('places.jpeg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  border: 1px solid black;
-}
-
-.favorite-season {
-  width: 100%;
-  height: 300px;
-  background-image: url('Changing-Seasons.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  border: 1px solid black;
-}
-
-.life-goals {
-  width: 100%;
-  height: 300px;
-  background-image: url('time.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  border: 1px solid black;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 8px;
+  opacity: 1;
+  transition: .5s ease;
+  backface-visibility: hidden;
 }
 
 .centered {
@@ -49,5 +26,141 @@
 }
 
 .container {
-  background-color: grey;
+  background-color: rgba(128, 128, 128, 0.317);
+}
+
+.description {
+  float: right;
+}
+
+.middle1 {
+  transition: .5s ease;
+  opacity: 0;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%)
+}
+.middle2 {
+  transition: .5s ease;
+  opacity: 0;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%)
+}
+.middle3 {
+  transition: .5s ease;
+  opacity: 0;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%)
+}
+.middle4 {
+  transition: .5s ease;
+  opacity: 0;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%)
+}
+
+.container1:hover .image1 {
+  opacity: 0.5;
+  height: 430px;
+}
+.container2:hover .image2 {
+  opacity: 0.5;
+  height: 430px;
+}
+.container3:hover .image3 {
+  opacity: 0.5;
+  height: 430px;
+}
+.container4:hover .image4 {
+  opacity: 0.5;
+  height: 430px;
+}
+
+.container1:hover .middle1 {
+  opacity: 1;
+}
+.container2:hover .middle2 {
+  opacity: 1;
+}
+.container3:hover .middle3 {
+  opacity: 1;
+}
+.container4:hover .middle4 {
+  opacity: 1;
+}
+
+.text1 {
+  background-color:rgba(4, 15, 41, 0.708);
+  color: white;
+  font-size: 30px;
+  padding: 16px 32px;
+}
+.text2 {
+  background-color:rgba(4, 15, 41, 0.708);
+  color: white;
+  font-size: 30px;
+  padding: 16px 32px;
+}
+.text3 {
+  background-color:rgba(4, 15, 41, 0.708);
+  color: white;
+  font-size: 30px;
+  padding: 16px 32px;
+}
+.text4 {
+  background-color:rgba(4, 15, 41, 0.708);
+  color: white;
+  font-size: 30px;
+  padding: 16px 32px;
+}
+
+li {
+  font-size: 16px;
+  color: rgb(7, 102, 244);
+  list-style-type: square; 
+}
+
+.page-title {
+  color: rgb(121, 104, 4)
+}
+
+.spring{
+  float: left;
+  color: rgb(78, 220, 78);
+}
+
+.summer {
+  float: left;
+  color: yellow;
+}
+
+.fall {
+  float: left;
+  color: red;
+}
+
+.winter {
+  float: right;
+  color: white;
+}
+
+.spring, .summer, .fall, .winter {
+  display: block;
+  width: 280px;
+  text-align: center;
+}
+
+.time-paragraphs {
+  color: rgb(141, 64, 228);
 }
