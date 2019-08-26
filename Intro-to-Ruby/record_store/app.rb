@@ -51,8 +51,7 @@ end
 delete('/albums/:id') do
   @album = Album.find(params[:id].to_i())
   @album.delete()
-  @albums = Album.all
-  erb(:album)
+  redirect to('/albums')
 end
 
 get('/albums/:id/edit') do

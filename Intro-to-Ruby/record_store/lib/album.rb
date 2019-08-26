@@ -1,13 +1,18 @@
+
 class Album
-  attr_reader :id, :name
+  attr_reader :id, :name, :artist, :year, :genre, :length
   attr_accessor :name
   @@albums = {}
   @@total_rows = 0
   @@sold_albums = {}
 
-  def initialize(name, id)
-    @name = name
-    @id = id || @@total_rows += 1
+  def initialize(attributes)
+    @name = attributes.fetch(:name)
+    @artist = attributes.fetch(:artist)
+    @year = attributes.fetch(:year)
+    @genre = attributes.fetch(:genre)
+    @length = attributes.fetch(:length)
+    @id = attributes.fetch(:id)
   end
 
   def self.all
@@ -19,7 +24,7 @@ class Album
   end
 
   def save
-    @@albums[self.id] = Album.new(self.name, self.id)
+    @@albums[self.id] = Album.new({:name => self.name, :artist => self.artist, :year => self.year, :genre => self.genre, :length => self.length,  :id => @@total_rows += 1})
   end
 
   def ==(album_to_compare)
@@ -38,9 +43,10 @@ class Album
   def self.search(name)
     @@albums.values.select{|a| a.name == name}
   end
-  def update(name)
-    self.name = name
-    @@albums[self.id] = Album.new(self.name, self.id)
+  
+  def update(attributes)
+    self.name = attributes
+    @@albums[self.id] = Album.new({:name => self.name, :artist => self.artist, :year => self.year, :genre => self.genre, :length => self.length,  :id => @@total_rows += 1})
   end
 
   def delete
@@ -52,6 +58,6 @@ class Album
   end
 
   def songs
-    Song.find_by_album(self.id)
+    Song.find_by_album({:name => self.name, :artist => self.artist, :year => self.year, :genre => self.genre, :length => self.length,  :id => @@total_rows += 1})
   end
 end

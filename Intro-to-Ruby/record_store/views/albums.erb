@@ -14,7 +14,7 @@
       </div>
       <% if @albums.any? %>
         <ul class="list-group">
-      	   <% @albums.each do |album| %>
+           <% @albums.each do |album| %>
            <li class="list-group-item"><a href="/albums/<%= album.id %>"><%= album.name %></a></li>
            <% end %>
         </ul>
@@ -43,7 +43,7 @@
       </div>
       <% if @sold_albums.any? %>
         <ul class="list-group">
-      	   <% @@sold_albums.each do |sold_album| %>
+           <% @@sold_albums.each do |sold_album| %>
            <li><a href="/albums/<%= sold_album.id %>"><%= sold_album.name %></a></li>
            <% end %>
         </ul>
