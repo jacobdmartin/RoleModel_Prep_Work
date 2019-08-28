@@ -1,7 +1,7 @@
 
 class Album
   attr_reader :id, :name, :artist, :year, :genre, :length
-  attr_accessor :name
+  attr_accessor :name, :id
   @@albums = {}
   @@total_rows = 0
   @@sold_albums = {}
@@ -58,6 +58,6 @@ class Album
   end
 
   def songs
-    Song.find_by_album({:name => self.name, :artist => self.artist, :year => self.year, :genre => self.genre, :length => self.length,  :id => @@total_rows += 1})
+    Song.find_by_album(self.id)
   end
 end

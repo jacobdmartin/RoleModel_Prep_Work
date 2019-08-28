@@ -29,7 +29,7 @@ end
 
 post('/albums') do
   name = params[:album_name]
-  album = Album.new(name, nil)
+  album = Album.new({name: name, :artist => nil, :year => nil, :genre => nil, :length => nil,  :id => nil})
   album.save()
   @albums = Album.all()
   @sold_albums = Album.all_sold
