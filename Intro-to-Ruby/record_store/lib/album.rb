@@ -19,10 +19,6 @@ class Album
     @@albums.values.sort_by(&:name)
   end
 
-  def self.all_sold
-    @@sold_albums.values.sort_by(&:name)
-  end
-
   def save
     @@albums[self.id] = Album.new({:name => self.name, :artist => self.artist, :year => self.year, :genre => self.genre, :length => self.length,  :id => id})
   end
@@ -54,11 +50,37 @@ class Album
     @@albums.delete(self.id)
   end
 
-  def sold()
-    @@sold_albums[:name] = @@albums.delete(:name)
-  end
-
   def songs
     Song.find_by_album(self.id)
+  end
+
+  def sell
+    @@sold_albums[self.id] = @@albums.delete(self.id)
+  end
+
+  def self.all_sold
+    @@sold_albums.values.sort_by(&:name)
+  end
+
+  def save_sold
+    @@sold_albums[self.id] = Album.new({:name => self.name, :artist => self.artist, :year => self.year, :genre => self.genre, :length => self.length,  :id => id})
+  end
+
+  def self.find_sold(id)
+    @@sold_albums[id]
+  end
+
+  def self.search_sold(name)
+    @@sold_albums.values.select{|a| a.name == name}
+  end
+  
+  def update_sold(attributes)
+    attributes.each do |key, value|
+      instance_variable_set("@#{key}", value)
+    end
+  end
+
+  def delete_sold
+    @@sold_albums.delete(self.id)
   end
 end
