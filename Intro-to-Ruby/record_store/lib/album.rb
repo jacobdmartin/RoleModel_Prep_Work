@@ -1,18 +1,18 @@
 
 class Album
   attr_reader :id, :name, :artist, :year, :genre, :length
-  attr_accessor :name, :id
+  attr_accessor :id, :name
   @@albums = {}
   @@total_rows = 0
   @@sold_albums = {}
 
   def initialize(attributes)
-    @name = attributes.fetch(:name)
-    @artist = attributes.fetch(:artist)
-    @year = attributes.fetch(:year)
-    @genre = attributes.fetch(:genre)
-    @length = attributes.fetch(:length)
-    @id = attributes.fetch(:id)
+    @name = attributes[:name]
+    @artist = attributes[:artist]
+    @year = attributes[:year]
+    @genre = attributes[:genre]
+    @length = attributes[:length]
+    @id = attributes[:id] || @@total_rows += 1
   end
 
   def self.all
@@ -24,7 +24,7 @@ class Album
   end
 
   def save
-    @@albums[self.id] = Album.new({:name => self.name, :artist => self.artist, :year => self.year, :genre => self.genre, :length => self.length,  :id => @@total_rows += 1})
+    @@albums[self.id] = Album.new({:name => self.name, :artist => self.artist, :year => self.year, :genre => self.genre, :length => self.length,  :id => id})
   end
 
   def ==(album_to_compare)
@@ -45,8 +45,9 @@ class Album
   end
   
   def update(attributes)
-    self.name = attributes
-    @@albums[self.id] = Album.new({:name => self.name, :artist => self.artist, :year => self.year, :genre => self.genre, :length => self.length,  :id => @@total_rows += 1})
+    attributes.each do |key, value|
+      instance_variable_set("@#{key}", value)
+    end
   end
 
   def delete

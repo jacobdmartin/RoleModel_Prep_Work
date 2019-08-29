@@ -41,17 +41,6 @@
 
         <h4>No Longer Available</h4>
       </div>
-      <% if @sold_albums.any? %>
-        <ul class="list-group">
-           <% @@sold_albums.each do |sold_album| %>
-           <li><a href="/albums/<%= sold_album.id %>"><%= sold_album.name %></a></li>
-           <% end %>
-        </ul>
-      <% else %>
-        <ul class="list-group">
-          <li class="list-group-item">There are currently no records to display.</li>
-        </ul>
-      <% end %>
 
       <form action="/albums" method="get">
       <div class="input-group mb-3">

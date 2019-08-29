@@ -64,7 +64,7 @@ describe '#Song' do
     it("updates an song by id") do
       song = Song.new({:name => "In Rainbows", :artist => "Radiohead", :lyrics => "42:39", :id => 1, :album_id => 1})
       song.save()
-      song = song.update({:name => "Mr. P.C.", :artist => "Radiohead", :lyrics => "42:39", :id => 1, :album_id => 1})
+      song.update({:name => "Mr. P.C.", :artist => "Radiohead", :lyrics => "42:39", :id => 1, :album_id => 1})
       expect(song.name).to(eq("Mr. P.C."))
     end
   end

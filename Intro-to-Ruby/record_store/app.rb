@@ -29,8 +29,8 @@ end
 
 post('/albums') do
   name = params[:album_name]
-  album = Album.new({name: name, :artist => nil, :year => nil, :genre => nil, :length => nil,  :id => nil})
-  album.save()
+  @album = Album.new({:name => name, :artist => nil, :year => nil, :genre => nil, :length => nil,  :id => nil})
+  @album.save()
   @albums = Album.all()
   @sold_albums = Album.all_sold
   erb(:albums)
@@ -43,7 +43,7 @@ end
 
 patch('/albums/:id') do
   @album = Album.find(params[:id].to_i())
-  @album.update(params[:name])
+  @album.update({ name: params[:name] })
   @albums = Album.all
   erb(:albums)
 end
@@ -66,7 +66,7 @@ end
 
 post('/albums/:id/songs') do
   @album = Album.find(params[:id].to_i())
-  song = Song.new(params[:song_name], @album.id, nil)
+  song = Song.new({ name: params[:song_name], album_id: @album.id })
   song.save()
   erb(:album)
 end
@@ -74,7 +74,7 @@ end
 patch('/albums/:id/songs/:song_id') do
   @album = Album.find(params[:id].to_i())
   song = Song.find(params[:song_id].to_i())
-  song.update(params[:name], @album.id)
+  song.update(name: params[:name])
   erb(:album)
 end
 
